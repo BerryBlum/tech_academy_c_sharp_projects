@@ -135,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>carRental.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\carRental.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carRental.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\carRental.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,22 +156,23 @@
     <Compile Include="ViewModels\CarRentalQuoteVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\carRental.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>carRental.edmx</DependentUpon>
-      <LastGenOutput>carRental.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\carRental.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>carRental.edmx</DependentUpon>
-      <LastGenOutput>carRental.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Models\carRental.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carRental.edmx</DependentUpon>
+      <LastGenOutput>carRental.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\carRental.edmx.sql" />
+    <Content Include="Models\carRental.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carRental.edmx</DependentUpon>
+      <LastGenOutput>carRental.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -174,16 +180,6 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -199,6 +195,16 @@
     <Content Include="Models\carRental.edmx.diagram">
       <DependentUpon>carRental.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -241,10 +247,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\MonthlyTotal\MonthlyTotal.cshtml" />
+    <Content Include="Views\Home\GetQuote.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MonthlyTotal\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

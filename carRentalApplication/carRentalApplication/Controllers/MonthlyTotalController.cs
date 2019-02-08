@@ -9,8 +9,8 @@ namespace carRentalApplication.Controllers
     public class MonthlyTotalController : Controller
     {
         // GET: MonthlyTotal
-        public static void MonthlyTotal(int id, string dateOfBirth, int underInfluence, int speedingTickets, string carMake,
-            string carModel, int carYear, bool fullCoverage)
+        public static void MonthlyTotal(int id, string dateOfBirth, int speedingTickets, string carMake,
+            string carModel, int carYear, int underInfluence = 0, int fullCoverage = 0)
         {
             decimal monthlyTotal = 50;
             string birth = dateOfBirth;
@@ -48,16 +48,15 @@ namespace carRentalApplication.Controllers
                 }
                 monthlyTotal += 25;
             }
-            if(underInfluence > 0)
+            if(underInfluence != 0)
             {
-                
+                monthlyTotal = Convert.ToDecimal(decimal.ToDouble(monthlyTotal)*1.25);
             }
 
-            if (fullCoverage)
+            if (fullCoverage != 0)
             {
-
+                monthlyTotal = Convert.ToDecimal(decimal.ToDouble(monthlyTotal) * 1.5);
             }
-
         }
     }
 }

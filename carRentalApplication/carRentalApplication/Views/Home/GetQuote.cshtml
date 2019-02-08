@@ -1,0 +1,50 @@
+﻿@using carRentalApplication.ViewModels
+@model List<CarRentalQuoteVM>
+
+<h2>QuoteForm</h2>
+
+<div class="container">
+    <div class="col">
+        @foreach (var carquotes in Model)
+        {
+            <div class="row align-items-start">
+                <div class="col-md-4">
+                    @carquotes.FirstName
+                </div>
+                <div class="col-md-4">
+                    @carquotes.LastName
+                </div>
+                <div class="col-md-4">
+                    @carquotes.EmailAddress
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col-md-4">
+                    @carquotes.DateOfBirth
+                </div>
+                <div class="col-md-4">
+                    @carquotes.UnderInfluence
+                </div>
+                <div class="col-md-4">
+                    @carquotes.SpeedingTickets
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col-md-4">
+                    @carquotes.CarMake
+                </div>
+                <div class="col-md-4">
+                    @carquotes.CarModel
+                </div>
+                <div class="col-md-4">
+                    @carquotes.CarYear
+                </div>
+            </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off"> Full Coverage
+                </label>
+            </div>
+        }
+    </div>
+</div>
