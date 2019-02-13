@@ -11,7 +11,7 @@
             <h5 class="m-0">INFORMATION PEEPS</h5>
         </div>
         <div class="container text-center">
-            @using (Html.BeginForm("GetQuote", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Quote", "Home", FormMethod.Post))
             {
                 <div class="row no-gutters">
                     <div class="form-group col">
@@ -35,37 +35,19 @@
                     </div>
                     <div class="form-group col">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="dropdownCheck" value="1">
+                            <input name="UnderInfluence" type="checkbox" class="form-check-input" id="dropdownCheck" value="1">
                             <label class="form-check-label" for="dropdownCheck">
                                 Drove Under the Influence
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="btn-group">
-                    <div class="dropdown col">
-                        <button name="CarMake" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Vehicle Make
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" type="button" value="porsche">Porsche</button>
-                            <div class="dropdown-item form-group">
-                                <label for="alternativeCarMake">Other</label>
-                                <input type="text" class="form-control" id="alternativeCarMake" placeholder="User Input">
-                            </div>
-                        </div>
+                <div class="row no-gutter">
+                    <div class="form-group col">
+                        <input name="CarMake" type="text" class="form-control" placeholder="Car Make" />
                     </div>
-                    <div class="dropdown col">
-                        <button name="CarModel" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Vehicle Model
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" type="button" value="911 carerra">911 Carerra</button>
-                            <div class="dropdown-item form-group">
-                                <label for="alternativeCarModel">Other</label>
-                                <input type="text" class="form-control" id="alternativeCarModel" placeholder="User Input">
-                            </div>
-                        </div>
+                    <div class="form-group col">
+                        <input name="CarModel" type="text" class="form-control" placeholder="Car Model" />
                     </div>
                     <div class="form-group col">
                         <input name="CarYear" type="text" class="form-control" placeholder="Vehicle Year">
@@ -73,8 +55,8 @@
                 </div>
                 <div class="row no-gutters">
                     <div class="form-group col">
-                        <div name="FullCoverage" class="form-check">
-                            <input type="checkbox" class="form-check-input" id="dropdownCheck" value="1">
+                        <div class="form-check">
+                            <input name="InsuranceCoverage" type="checkbox" class="form-check-input" id="dropdownCheck" value="1">
                             <label class="form-check-label" for="dropdownCheck">
                                 Full Coverage Insurance
                             </label>

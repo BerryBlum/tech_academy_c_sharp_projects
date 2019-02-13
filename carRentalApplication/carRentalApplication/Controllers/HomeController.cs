@@ -35,84 +35,77 @@ namespace carRentalApplication.Controllers
             {
                 using (db_carRentalEntities db = new db_carRentalEntities())
                 {
-                    var carquotes = db.rentalCharts;
-                    var carquoteVms = new List<CarRentalQuoteVM>();
-                    foreach (var carquote in carquotes)
-                    {
-                        var carquoteVm = new CarRentalQuoteVM();
-                        carquoteVm.FirstName = carquote.FirstName;
-                        carquoteVm.LastName = carquote.LastName;
-                        carquoteVm.EmailAddress = carquote.EmailAddress;
-                        carquoteVm.DateOfBirth = carquote.DateOfBirth;
-                        carquoteVm.UnderInfluence = carquote.UnderInfluence;
-                        carquoteVm.SpeedingTickets = carquote.SpeedingTickets;
-                        carquoteVm.CarMake = carquote.CarMake;
-                        carquoteVm.CarModel = carquote.CarModel;
-                        carquoteVm.CarYear = carquote.CarYear;
-                        carquoteVm.FullCoverage = carquote.FullCoverage;
-                        carquoteVm.MonthlyTotal = MonthlyTotal(carquote.Id, carquote.DateOfBirth, carquote.SpeedingTickets, carquote.CarMake, carquote.CarModel, carquote.CarYear, carquote.UnderInfluence, carquote.FullCoverage);
-                        carquoteVms.Add(carquoteVm);
+                    var getQuote = new rentalChart();
+                    getQuote.FirstName = firstName;
+                    getQuote.LastName = lastName;
+                    getQuote.EmailAddress = emailAddress;
+                    getQuote.DateOfBirth = dateOfBirth;
+                    getQuote.UnderInfluence = underInfluence;
+                    getQuote.SpeedingTickets = speedingTickets;
+                    getQuote.CarMake = carMake;
+                    getQuote.CarModel = carModel;
+                    getQuote.CarYear = carYear;
+                    getQuote.FullCoverage = insuranceCoverage;
+                    getQuote.MonthlyTotal = MonthlyTotal(getQuote.DateOfBirth, getQuote.SpeedingTickets, getQuote.CarMake, getQuote.CarModel, getQuote.CarYear, getQuote.UnderInfluence, getQuote.FullCoverage);
 
-                        //db.rentalCharts.Add(carquoteVms);
-                        //db.SaveChanges();
-                    }
-                    return View(carquoteVms);
+                    db.rentalCharts.Add(getQuote);
+                    db.SaveChanges();
+                    return View("GetQuote");
                 }
             }
         }
-        private static decimal MonthlyTotal(int id, string dateOfBirth, int speedingTickets, string carMake,
+        private static decimal MonthlyTotal(string dateOfBirth, int speedingTickets, string carMake,
            string carModel, int carYear, int underInfluence = 0, int fullCoverage = 0)
         {
-            decimal monthlyTotal = 50;
             string birth = dateOfBirth;
             TimeSpan span = DateTime.Now - DateTime.Parse(birth);
             int age = Convert.ToInt32(span.Days / 365);
-
+            decimal total = 50;
 
             if (16 <= age && age < 18)
             {
-                monthlyTotal += 100;
+                total += 100;
             }
             else if (18 <= age && age < 25)
             {
-                monthlyTotal += 25;
+                total += 25;
             }
             else if (100 <= age)
             {
-                monthlyTotal += 25;
+                total += 25;
             }
             else if (age < 16)
             {
-                return monthlyTotal;
+                return total;
             }
             if (carYear < 2000)
             {
-                monthlyTotal += 25;
+                total += 25;
             }
             else if (2015 <= carYear)
             {
-                monthlyTotal += 25;
+                total += 25;
             }
-            monthlyTotal += speedingTickets * 10;
+            total += speedingTickets * 10;
 
             if (carMake.ToLower() == "porsche")
             {
                 if (carModel.ToLower() == "911 carrera")
                 {
-                    monthlyTotal += 25;
+                   total += 25;
                 }
-                monthlyTotal += 25;
+                total += 25;
             }
             if (underInfluence != 0)
             {
-                monthlyTotal = Convert.ToDecimal(decimal.ToDouble(monthlyTotal) * 1.25);
+               total = Convert.ToDecimal(decimal.ToDouble(total) * 1.25);
             }
 
             if (fullCoverage != 0)
             {
-                monthlyTotal = Convert.ToDecimal(decimal.ToDouble(monthlyTotal) * 1.5);
+                total = Convert.ToDecimal(decimal.ToDouble(total) * 1.5);
             }
-            return monthlyTotal;
+            return total;
         }
     }
 }

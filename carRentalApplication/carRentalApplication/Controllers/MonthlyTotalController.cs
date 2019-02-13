@@ -10,9 +10,8 @@ namespace carRentalApplication.Controllers
     {
         // GET: MonthlyTotal
         public static void MonthlyTotal(int id, string dateOfBirth, int speedingTickets, string carMake,
-            string carModel, int carYear, int underInfluence = 0, int fullCoverage = 0)
+            string carModel, int carYear, decimal monthlyTotal = 50, int underInfluence = 0, int fullCoverage = 0)
         {
-            decimal monthlyTotal = 50;
             string birth = dateOfBirth;
             TimeSpan span = DateTime.Now - DateTime.Parse(birth);
             int age = Convert.ToInt32(span.Days / 365);
