@@ -13,8 +13,8 @@ namespace carRentalApplication.Models
     using System.Collections.Generic;
     
     public partial class rentalChart
-    {
-        public int Id { get; internal set; }
+    {    
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }

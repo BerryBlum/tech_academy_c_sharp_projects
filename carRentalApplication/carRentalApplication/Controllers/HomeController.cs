@@ -1,9 +1,5 @@
 ﻿using carRentalApplication.Models;
-using carRentalApplication.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace carRentalApplication.Controllers
@@ -36,6 +32,7 @@ namespace carRentalApplication.Controllers
                 using (db_carRentalEntities db = new db_carRentalEntities())
                 {
                     var getQuote = new rentalChart();
+
                     getQuote.FirstName = firstName;
                     getQuote.LastName = lastName;
                     getQuote.EmailAddress = emailAddress;

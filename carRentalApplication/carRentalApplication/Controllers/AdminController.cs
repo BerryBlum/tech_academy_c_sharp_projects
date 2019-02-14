@@ -1,5 +1,4 @@
 ﻿using carRentalApplication.Models;
-using carRentalApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +15,10 @@ namespace carRentalApplication.Controllers
             using (db_carRentalEntities db = new db_carRentalEntities())
             {
                 var carquotes = db.rentalCharts;
-                var carquoteVms = new List<CarRentalQuoteVM>();
+                var carquoteVms = new List<rentalChart>();
                 foreach (var quote in carquotes)
                 {
-                    var carquoteVm = new CarRentalQuoteVM();
+                    var carquoteVm = new rentalChart();
                     carquoteVm.Id = quote.Id;
                     carquoteVm.FirstName = quote.FirstName;
                     carquoteVm.LastName = quote.LastName;

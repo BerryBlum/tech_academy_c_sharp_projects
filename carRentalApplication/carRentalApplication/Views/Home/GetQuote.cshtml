@@ -1,43 +1,43 @@
-﻿@using carRentalApplication.ViewModels
-@model List<CarRentalQuoteVM>
+﻿@using carRentalApplication.Models
+@model List<rentalChart>
 
-<h2>Quote</h2>
+<h2>GetQuote</h2>
 
 <div class="container">
     <div class="col">
-        @foreach (var carquotes in Model)
+        @foreach (var getQuote in Model)
         {
             <div class="row align-items-start">
                 <div class="col-md-4">
-                    @carquotes.FirstName
+                    @getQuote.FirstName
                 </div>
                 <div class="col-md-4">
-                    @carquotes.LastName
+                    @getQuote.LastName
                 </div>
                 <div class="col-md-4">
-                    @carquotes.EmailAddress
-                </div>
-            </div>
-            <div class="row align-items-start">
-                <div class="col-md-4">
-                    @carquotes.DateOfBirth
-                </div>
-                <div class="col-md-4">
-                    @carquotes.UnderInfluence
-                </div>
-                <div class="col-md-4">
-                    @carquotes.SpeedingTickets
+                    @getQuote.EmailAddress
                 </div>
             </div>
             <div class="row align-items-start">
                 <div class="col-md-4">
-                    @carquotes.CarMake
+                    @getQuote.DateOfBirth
                 </div>
                 <div class="col-md-4">
-                    @carquotes.CarModel
+                    @getQuote.UnderInfluence
                 </div>
                 <div class="col-md-4">
-                    @carquotes.CarYear
+                    @getQuote.SpeedingTickets
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col-md-4">
+                    @getQuote.CarMake
+                </div>
+                <div class="col-md-4">
+                    @getQuote.CarModel
+                </div>
+                <div class="col-md-4">
+                    @getQuote.CarYear
                 </div>
             </div>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -46,9 +46,8 @@
                 </label>
             </div>
             <div class="col">
-                @carquotes.MonthlyTotal
+                @getQuote.MonthlyTotal
             </div>
-            <script src="~/Scripts/popperjs"></script>
         }
     </div>
 </div>
