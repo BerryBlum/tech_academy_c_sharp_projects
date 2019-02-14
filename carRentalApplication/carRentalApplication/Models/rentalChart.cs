@@ -11,20 +11,38 @@ namespace carRentalApplication.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class rentalChart
-    {    
-        public int Id { get; set; }
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public rentalChart()
+        {
+            this.Id = 0;
+        }
+    
+        public int Id { get; internal set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string EmailAddress { get; set; }
+        [Required]
         public string DateOfBirth { get; set; }
+        [Required]
         public int SpeedingTickets { get; set; }
+        [Required]
         public int UnderInfluence { get; set; }
+        [Required]
         public string CarMake { get; set; }
+        [Required]
         public string CarModel { get; set; }
+        [Required]
         public int CarYear { get; set; }
+        [Required]
         public int FullCoverage { get; set; }
+        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
         public decimal MonthlyTotal { get; set; }
     }
 }

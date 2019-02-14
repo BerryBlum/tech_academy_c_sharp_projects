@@ -47,7 +47,7 @@ namespace carRentalApplication.Controllers
 
                     db.rentalCharts.Add(getQuote);
                     db.SaveChanges();
-                    return View("GetQuote");
+                    return View("GetQuote", getQuote);
                 }
             }
         }

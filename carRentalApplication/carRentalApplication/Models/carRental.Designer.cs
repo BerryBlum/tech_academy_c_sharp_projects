@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Berry\Documents\GitHub\tech_academy_c_sharp_projects\carRentalApplication\carRentalApplication\Models\carRental.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Myuri\Documents\GitHub\tech_academy_c_sharp_projects\carRentalApplication\carRentalApplication\Models\carRental.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

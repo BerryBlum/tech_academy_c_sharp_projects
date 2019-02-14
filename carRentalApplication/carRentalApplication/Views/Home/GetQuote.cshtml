@@ -1,54 +1,43 @@
 ﻿@using carRentalApplication.Models
-@model List<rentalChart>
+@model rentalChart
 
-<h2>GetQuote</h2>
+<h2>Quote</h2>
 
 <div class="container">
     <div class="col">
-        @foreach (var getQuote in Model)
-        {
-            <div class="row align-items-start">
-                <div class="col-md-4">
-                    @getQuote.FirstName
-                </div>
-                <div class="col-md-4">
-                    @getQuote.LastName
-                </div>
-                <div class="col-md-4">
-                    @getQuote.EmailAddress
-                </div>
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <p>Name: @Model.FirstName @Model.LastName</p>
             </div>
-            <div class="row align-items-start">
-                <div class="col-md-4">
-                    @getQuote.DateOfBirth
-                </div>
-                <div class="col-md-4">
-                    @getQuote.UnderInfluence
-                </div>
-                <div class="col-md-4">
-                    @getQuote.SpeedingTickets
-                </div>
+            <div class="col-md-4">
+                <p>Email: @Model.EmailAddress</p>
             </div>
-            <div class="row align-items-start">
-                <div class="col-md-4">
-                    @getQuote.CarMake
-                </div>
-                <div class="col-md-4">
-                    @getQuote.CarModel
-                </div>
-                <div class="col-md-4">
-                    @getQuote.CarYear
-                </div>
+            <div class="col-md-4">
+                <p>Date of birth: @Model.DateOfBirth</p>
             </div>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                    <input type="radio" name="options" id="option1" autocomplete="off"> Full Coverage
-                </label>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <p>Times driven under the influence: @Model.UnderInfluence</p>
             </div>
-            <div class="col">
-                @getQuote.MonthlyTotal
+            <div class="col-md-4">
+                <p>Number of speeding tickets: @Model.SpeedingTickets</p>
             </div>
-        }
+        </div>
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <p>Make: @Model.CarMake</p>
+            </div>
+            <div class="col-md-4">
+                <p>Model: @Model.CarModel</p>
+            </div>
+            <div class="col-md-4">
+                <p>Vehicle Year: @Model.CarYear</p>
+            </div>
+        </div>
+        <div class="row align-items-start col-md-4">
+            <p>Monthly Charge: $@Model.MonthlyTotal</p>
+        </div>
     </div>
 </div>
 

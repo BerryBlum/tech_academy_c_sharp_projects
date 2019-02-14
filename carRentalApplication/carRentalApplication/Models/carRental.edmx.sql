@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/13/2019 17:36:25
--- Generated from EDMX file: C:\Users\Berry\Documents\GitHub\tech_academy_c_sharp_projects\carRentalApplication\carRentalApplication\Models\carRental.edmx
+-- Date Created: 02/14/2019 13:11:29
+-- Generated from EDMX file: C:\Users\Myuri\Documents\GitHub\tech_academy_c_sharp_projects\carRentalApplication\carRentalApplication\Models\carRental.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -32,7 +32,7 @@ GO
 
 -- Creating table 'rentalCharts'
 CREATE TABLE [dbo].[rentalCharts] (
-    [Id] int IDENTITY(0,1) NOT NULL,
+    [Id] int IDENTITY(1,1) NOT NULL,
     [FirstName] varchar(25)  NOT NULL,
     [LastName] varchar(25)  NOT NULL,
     [EmailAddress] varchar(50)  NOT NULL,
